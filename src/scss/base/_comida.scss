@@ -1,0 +1,88 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.titulos {
+  width: auto;
+  transform: translateX(15%);
+  h1 {
+    width: 100%;
+    color: v.$negro;
+  }
+ 
+}
+.subtitulo_comida {
+  margin-left: 0;
+  width: 100%;
+  transform: translateX(8%);
+  color: v.$grisOscuro;
+}
+
+.estructura {
+  display: block;
+  margin: 2rem;
+}
+
+.imagen_menu {
+  transform: translateX(10%);
+}
+
+.detalle_comida2 {
+  
+  transform: translate(2%);
+}
+
+.titulo_de_cada_comida2 {
+  margin-left: 0;
+  font-size: 2rem;
+  transform: translate(17%);
+}
+
+
+
+
+//MIXIN TABLET
+
+.subtitulo_comida {
+  @include m.tablet {
+    transform: translateX(28%);
+  }
+}
+.detalle_comida2 {
+  @include m.tablet {
+    transform: translateX(7%);
+  }
+}
+.titulo_de_cada_comida2 {
+  @include m.tablet {
+    font-size: 3rem;
+    transform: translateX(28%);
+  }
+}
+//MIXIN DESKTOP
+.subtitulo_comida {
+  @include m.desktop {
+    transform: translateX(35%);
+  }
+}
+
+.imagen_menu {
+  @include m.desktop {
+    width: 800px;
+    height: auto;
+    transform: translateX(35%);
+    
+  }
+
+}
+.detalle_comida2 {
+  @include m.desktop {
+    transform: translateX(20%);
+  }
+}
+
+.titulo_de_cada_comida2 {
+  @include m.desktop {
+    font-size: 2.8rem;
+    transform: translateX(18%);
+  }
+}

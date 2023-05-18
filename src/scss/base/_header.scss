@@ -1,0 +1,164 @@
+@use "variables" as v;
+@use "base/mixins" as m;
+
+.header {
+  z-index: 10;
+  background-color: v.$grisOscuro;
+  height: auto;
+  width: auto;
+  }
+
+.contenido-logo {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 300px;
+  min-width: 100px;
+  
+}
+
+.navegacion {
+  display: grid;
+  grid-template-columns: 44% 30% 30%;
+  justify-content: center;
+  transform: translateX(1%) translateY(15%);
+  margin-left: 1rem;
+  
+  a {
+  color: v.$blanco;
+  font-family: v.$fuente_principal;
+  font-size: 2.2rem;
+  padding: 1.5rem;
+  &:hover {
+    color: v.$amarillo;
+  }
+  }
+}
+
+.redes_y_contactos {
+  
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10%;
+  cursor: pointer;
+  justify-content: end;
+  transform: translateY(25%);
+  
+}
+
+.icon {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  margin: 5px;
+  border-radius: 50%;
+  transition: all .5s;
+}
+
+.icon:hover {
+  background-color: v.$verde;
+  box-shadow: 0 0 20px v.$verde;
+}
+
+.icon:hover:nth-child(2) {
+  background-color: v.$azul;
+  box-shadow: 0 0 20px v.$azul;
+
+}
+.icon:hover:nth-child(3) {
+  background-color: v.$rosa;
+  box-shadow: 0 0 20px v.$rosa;
+
+}
+.icon:hover:nth-child(4) {
+  background-color: v.$celeste;
+  box-shadow: 0 0 20px v.$celeste;
+
+}
+
+.icon i {
+  color: v.$blanco;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  font-size: 2rem;
+}
+  
+svg circle {
+  stroke-dasharray: 150;
+}
+
+.icon:hover circle {
+  stroke-dasharray: 220;
+}
+ 
+//CELULAR
+.navegacion {
+  @include m.telefono {
+    transform: translateX(-2%);
+  }
+}
+.redes_y_contactos {
+  @include m.telefono {
+    font-size: 2.5rem;
+    display: flex;
+    transform: translateX(6%);
+  }
+}
+.icon {
+  @include m.telefono {
+    margin: 4px;
+    width: 7rem;
+}
+}
+
+.contenido-logo {
+  @include m.telefono {
+    display: flex;
+    justify-content: center;
+    transform: translateX(10%);
+  }
+}
+
+// TABLET
+.header {
+  @include m.tablet {
+    display: flex;
+    
+  }
+}
+
+.contenido-logo {
+  @include m.tablet {
+    transform: translateX(10%);
+  }
+}
+
+.redes_y_contactos {
+  @include m.tablet {
+    transform: translateX(20%) translateY(20%);
+    
+  }
+}
+
+// DESKTOP
+
+.redes_y_contactos {
+  @include m.desktop {
+    transform: translateX(130%) translateY(35%);
+  }
+}
+
+.navegacion {
+  @include m.desktop {
+    transform: translateX(40%) translateY(20%);
+    font-size: 2.8rem;
+  }
+}
+.contenido-logo {
+  @include m.desktop {
+    transform: translateX(-10%);
+  }
+}
+
+

@@ -1,0 +1,121 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.footer {
+display: grid;
+grid-template:  30% 40% 20% 10%;
+background-color: v.$grisOscuro ;
+text-align: center;
+padding-top: 2rem;
+padding-bottom: 0;
+
+  p {
+    color: v.$blanco;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+
+}
+
+.logo_footer {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+width: 20%;
+
+margin: 0;
+}
+
+img {
+  width: 75%;
+}
+
+
+
+.contenedor-footer {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+    a {
+  margin: 1.2rem;
+
+  color: v.$blanco;
+  font-family: v.$fuente_principal;
+  font-size: 2.2rem;
+  &:hover {
+    color: v.$amarillo;
+  }
+  }
+  }
+
+.redes_y_contactos_footer {
+ display: grid;
+ grid-template-columns: 25% 25% 25% 25%;
+ justify-content: center;
+ margin-left: 5rem;
+  
+}
+
+
+//CELULAR
+
+.logo_footer {
+  @include m.telefono {
+    width: 80%;
+    transform: translateX(10%) translateY(-20%);
+  }
+}
+.redes_y_contactos_footer {
+  @include m.telefono {
+    margin-left: 0.9rem;
+  }
+}
+
+//TABLET
+.contenedor-footer {
+  @include m.tablet {
+    a {
+      padding: 3rem;
+    }
+
+  }
+}
+.logo_footer {
+  @include m.tablet {
+    width: 40%;
+    transform: translateX(-15%) translateY(-20%);
+  }
+}
+
+.redes_y_contactos_footer {
+  @include m.tablet {
+    transform: translateX(5%);
+  }
+}
+
+//DESKTOP
+
+
+.logo_footer {
+  @include m.desktop {
+    width: 20%;
+    transform: translateX(-10%) translateY(-20%);
+  }
+}
+
+.contenedor-footer {
+  @include m.desktop {
+    transform: translateX(-4%);
+    a {
+      padding: 10rem;
+      line-height: 5rem;
+      
+    }
+
+  }
+}
+
+.redes_y_contactos_footer {
+  @include m.desktop {
+    transform: translateX(6%);
+  }
+}

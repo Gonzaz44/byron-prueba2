@@ -1,0 +1,155 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+
+.contenido { 
+ margin: 0 ;
+ padding: 1rem;
+ box-sizing: border-box;
+ justify-content:center
+
+}
+
+.alinear_parrafo {
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+  word-spacing: 1rem;
+  
+}
+
+.menues {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: 4rem auto;
+  max-width: 120rem;
+  width: 100%;
+ 
+}
+
+.menues-imagen {
+margin: 0;
+padding: 3rem;
+box-sizing: border-box;
+width: 100%;
+max-width: 1000px;
+min-width: 320px;
+margin: auto;
+}
+
+
+.menues-cena {
+  margin: auto;
+  text-align: justify;
+}
+
+.boton {
+  display: block;
+  font-family: v.$fuente_principal;
+  color: v.$blanco;
+  text-align: center;
+  padding: 1rem 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  background-color: v.$amarillo;
+  width: 15rem;
+  height: 4rem;
+}
+
+.descripcion-parrafo {
+  text-align:justify;
+}
+
+
+// TELEFONO
+
+.subtitulo {
+  @include m.telefono {
+    margin-top: 1rem;
+  }
+}
+.boton {
+  @include m.telefono {
+    transform: translateX(60%);
+  }
+}
+
+.menues {
+  @include m.telefono {
+    margin: 0 ;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.menues-imagen {
+  @include m.telefono {
+    width: 140%;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+    padding-left: 0.5rem;
+  }
+}
+
+
+.titulos {
+  @include m.telefono {
+    margin-top: 4%;
+    
+    h1 {
+      transform: translateX(-20%);
+      font-size: 3.5rem;
+    }
+    
+  }
+}
+.alinear_parrafo {
+  @include m.telefono {
+    word-spacing: 0.5rem;
+    
+  }
+}
+
+//TABLET
+
+
+.menues-imagen {
+  @include m.tablet {
+    width: 110%;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+     h1 {
+      transform: translateX(-20%);
+      font-size: 4.5rem;
+    }
+    
+  }
+}
+.menues {
+  @include m.tablet {
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+  }
+}
+.titulos {
+  @include m.tablet {
+    margin-top: 1%;
+    font-size: 3rem;
+  }
+}
+
+
+//DESKTOP
+.titulo {
+  @include m.desktop {
+    margin-top: 1%;
+    font-size: 5rem;
+  }
+}
